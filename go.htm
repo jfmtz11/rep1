@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+	<head>
+		<title>JOe's AV Page</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="FrontEnd Web tutorials">
+  		<meta name="keywords" content="HTML,CSS,JavaScript">
+ 		<meta name="author" content="Joe">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="style1.css">
+		
+		<script>
+			function turnyellow() {
+			document.getElementById('div3').style.backgroundColor = "green";
+			document.getElementById('blackbutton').style.display="inline";
+			document.getElementById('greenbutton').style.display="none";
+			}
+			function turnblack() {
+			document.getElementById('div3').style.backgroundColor = "black";
+			document.getElementById('blackbutton').style.display="none";
+			document.getElementById('greenbutton').style.display="inline";
+			}
+			function displayshowbutton() {
+			document.getElementById('demo').innerHTML = "";
+			document.getElementById('showdatebutton').style.display="inline";
+			document.getElementById('hidedatebutton').style.display="none";
+			}
+			function hideshowbutton() {
+			document.getElementById('demo').innerHTML = Date();
+			document.getElementById('hidedatebutton').style.display="inline";
+			document.getElementById('showdatebutton').style.display="none";
+			}
+		</script>
+		<script>
+			function allowDrop(ev) {
+ 			 ev.preventDefault();
+			}
+
+			function drag(ev) {
+ 			 ev.dataTransfer.setData("text", ev.target.id);
+			}
+
+			function drop(ev) {
+ 			 ev.preventDefault();
+  			var data = ev.dataTransfer.getData("text");
+  			ev.target.appendChild(document.getElementById(data));
+			}
+		</script>
+
+	</head>
+<!-- ***************************************************************************************************** -->
+	<body style="margin:5px;padding:0">
+	 <header>
+	  This is a Header
+	 </header>
+
+	<p><strong><em>This is a paragraph.</em></strong></p>
+	<p style="color:red;"><mark>this is a new marked sentence.below me is a line created with the <em>hr</em> element</mark></p>
+		<hr>
+	<a title="w3 schools" href="https://www.w3schools.com" target="new"> This is a link to tutorials</a>
+	<p title="this is JOe"><img style="border:5px solid Black;"src="images/linked.jpg" width="100" height="100"> 
+	This text is on the same line as the picture. <p>
+	<table id="table1" align="center">
+	<caption style="color:red;">this is a caption for the table below</caption>
+		<tr>
+				<th> Firstname </th>
+				<th> Lastname </th>
+			</tr>
+			<tr>
+				<td> Joe</td>
+				<td>Martinez</td>
+			</tr>
+			 <tr>
+   				<th rowspan="2">Telephone:</th>
+   				<td>55577854</td>
+  			</tr>
+  			<tr>
+  			  	<td>55577855</td>
+  			</tr>
+		</table>
+
+<p>unordered list</p>
+<ul style="list-style-type:square;">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+
+<div id="div3" >
+	<h6> <h3 id="demo"></h6></h3>
+</div>
+<iframe id="iframe1" name="iframe1" ></iframe>
+
+<a href="http://localhost/go2.htm" target="iframe1">this link will open in the iframe above</a>
+
+
+<video width="320" height="240" controls>
+ 	 <source src="\images\movie.mp4" type="video/mp4">
+ 	 <source src="\images\movie.ogg" type="video/ogg">
+ 	 Your browser does not support the video tag.
+</video>
+this is an example of HTML5 video tag.
+
+<div id="song" style="background-color:blue;width:28%;position:absolute;top:65%;left:70%;color:white;height:25%;overflow:scroll;">
+	play JOe's Music
+	<p></p>
+	<audio controls>
+ 	 <source src="images/the game u play.wav" type="audio/wav">
+ 	 <source src="horse.mp3" type="audio/mpeg">
+	Your browser does not support the audio element.
+	</audio>
+	<iframe id="ytIframe" name="ytIframe" width="325" height="120" src="https://www.youtube.com/embed/TMLd2CKsbK0" 
+	frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen></iframe>
+</div>
+
+
+<div class="myclass" id="timediv">
+	<button id="showdatebutton"type="button" style="cursor:pointer";
+	onclick=hideshowbutton();>
+	<strong>Display</strong> Date and Time.
+	</button>
+	<button id="hidedatebutton"type="button" style="cursor:pointer;display:none;"
+	onclick=displayshowbutton();>
+	<strong>Remove</strong> Date and Time.
+	</button>
+
+	<button id="greenbutton"type="button" style="cursor:pointer;color:white;background-color:green;"
+	onclick=turnyellow();>
+	JavaScript -- change to green</button>
+	<button id="blackbutton" type="button" style="display:none;background-color:black;color:white;cursor:pointer;"
+	onclick=turnblack();>
+	JavaScript -- change to black</button>
+	<p><a href="bootstrap.htm" > Click here for bootstrap examples</a></p>
+</div>
+<div id="formdiv" align="center">
+<form method="get"action="formresult.php" target="iframe1">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+<div id="canvasDiv" align="center">
+	<p align="center">This is an HTML canvas example</p>
+	<canvas id="myCanvas">
+	</canvas>
+	<script>
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+
+	var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+	grd.addColorStop(0,"red");
+	grd.addColorStop(1,"white");
+
+	ctx.fillStyle = grd;
+	ctx.fillRect(10,10,150,80);
+	</script>
+</div>
+<footer>
+  <p>This is a footer</p>
+  <p>Posted by: JOe Martinez   <em>Contact information:</em> <a href="mailto:jfmtz11@hotmail.com">jfmtz11@hotmail.com</p>  
+  <p>&#128512;&#128525;&#128512</p>
+</footer>
+	</body>
+</html>
